@@ -1,0 +1,37 @@
+<div class="container">
+    <div class = "row">
+        <div class = "col-md-6">
+            <div class = "card">
+                <div class = "text-center">
+                    <h1> Login </h1>
+                </div>
+                <form>
+                    <form [formGroup] = "loginform" (ngSubmit) = "submitForm()">
+                        <div class="form-group">
+                          <label for="InputEmail">Email address</label>
+                          <input type="email" class="form-control" formControlName = "email_address" id="InputEmail" aria-describedby="emailHelp" placeholder="Enter your email address">
+                          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                          <!-- <div *ngIf="email_address.invalid && (email_address.dirty || email_address.touched)" class="alert alert-danger">
+                            <div *ngIf="email_address.errors?.['required']">
+                                Email address is required.
+                              </div>
+                          </div> -->
+                        </div>
+                        <div class="form-group">
+                          <label for="InputPassword">Password</label>
+                          <input type="password" class="form-control" formControlName = "password" id="InputPassword" placeholder="Password">
+                          <!-- <div *ngIf = "loginform.controls.password.errors?.required"> Password is required </div> -->
+                        </div>
+                        <div class="form-check">
+                          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                          <label class="form-check-label" for="Check">Remember me</label>
+                        </div>
+                        <button type="submit" [disabled] = "!loginform.valid" class="btn btn-outline-warning" style="color:rgb(224, 183, 45) ;" (click) = "login()">Login</button>
+                    </form>
+                    <a style = "color :rgb(224, 183, 45); margin-top : 10px" routerLink = "/signup" >New User ? Click here to Sign Up !</a>
+                </form>  
+            </div>
+        </div>
+    </div>
+</div>
+

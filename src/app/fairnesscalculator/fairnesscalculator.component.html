@@ -1,0 +1,39 @@
+
+<div class="dropdown mt-3">
+    <button type="button" class="btn btn-danger dropdown-toggle" id = "dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+      Month
+    </button>
+    <ul class="dropdown-menu" aria-labelledby = "dropdownMenuButton1">
+        <li><a class="dropdown-item" href="#"> January </a></li>
+        <li><a class="dropdown-item" href="#"> February</a></li>
+        <li><a class="dropdown-item" href="#"> March </a></li>
+        <li><a class="dropdown-item" href="#"> April </a></li>
+        <li><a class="dropdown-item" href="#"> May </a></li>
+        <li><a class="dropdown-item" href="#"> June </a></li>
+        <li><a class="dropdown-item" href="#"> July </a></li>
+        <li><a class="dropdown-item" href="#"> August </a></li>
+        <li><a class="dropdown-item" href="#"> September </a></li>
+        <li><a class="dropdown-item" href="#"> October </a></li>
+        <li><a class="dropdown-item" href="#"> November </a></li>
+        <li><a class="dropdown-item" href="#"> December </a></li>
+    </ul>
+  </div>
+  
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col"> Names </th>
+        <th scope="col"> Total Expenditure </th>
+        <th scope="col"> Debts </th>
+        <th scope="col"> Pay To </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let data of data">
+        <td> {{data.name}} </td>
+        <td> {{data.total_expenditure}} </td>
+        <td> {{data.debts}} </td>
+        <td> {{data.pay_to}} </td>
+      </tr>
+    </tbody>
+  </table>
