@@ -1,2 +1,51 @@
-
-<router-outlet></router-outlet>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav [opened]="opened">
+    <mat-toolbar class="sidenav-toolbar">
+      <span translate>Menu</span>
+      <button class="menu-close" mat-icon-button (click)="sidenav.close()">
+        &times;
+      </button>
+    </mat-toolbar>
+    <nav>
+      <mat-list>
+        <span>
+          <a mat-list-item routerLink="/addfriends" routerLinkActive="active" (click)="sidenav.close()">
+            <span translate>Add Friends</span>
+          </a>
+          <mat-divider></mat-divider>
+          <a mat-list-item routerLink="/addexpense" routerLinkActive="active" (click)="sidenav.close()">
+            <span translate>Add Expenses</span>
+          </a>
+          <mat-divider></mat-divider>
+          <a mat-list-item routerLink="/fairnesscalculator" routerLinkActive="active" (click)="sidenav.close()">
+            <span translate>Fairness Calculator</span>
+          </a>
+          <mat-divider></mat-divider>
+          <a mat-list-item routerLink="/visitor" routerLinkActive="active" (click)="sidenav.close()">
+            <span translate>SettleUp</span>
+          </a>
+          <mat-divider></mat-divider>
+          <a mat-list-item routerLink="/about" routerLinkActive="active" (click)="sidenav.close()">
+            <span translate>Statistics</span>
+          </a>
+        </span>
+      </mat-list>
+    </nav>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <p>
+      <mat-toolbar color="primary">
+        <div class="menu">
+          <button *ngIf="currentUrl != '/login' && currentUrl != '/signup'" mat-icon-button class="example-icon" (click)="openSideNav()" aria-label="Example icon-button with menu icon">
+            <mat-icon translate>menu</mat-icon>
+          </button>
+          <span>Expendica</span>
+        </div>
+      <a class="logout" *ngIf="currentUrl != '/login' && currentUrl != '/signup'" routerLink = "/login">
+        Logout
+      </a>
+    </mat-toolbar>
+    </p>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

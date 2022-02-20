@@ -13,6 +13,8 @@ import { FairnesscalculatorComponent } from './fairnesscalculator/fairnesscalcul
 import { ReactiveFormsModule } from '@angular/forms';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { NgChartsModule } from 'ng2-charts';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { NgChartsModule } from 'ng2-charts';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    NgChartsModule
+    NgChartsModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

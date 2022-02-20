@@ -8,8 +8,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color:black;
-    color: rgb(224, 183, 45);
+    background-color: #673ab7;
+    color: #FFFFFF;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;

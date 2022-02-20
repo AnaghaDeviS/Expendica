@@ -1,8 +1,11 @@
 
 
-
+<!-- Trigger -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#AddFriendsModal">
+  Add Friends
+</button>
   <!-- Modal -->
-  <div class="container"  id="AddFriendsModal" role = "dialog"  tabindex="-1" aria-labelledby="AddFriendsModalLabel" aria-hidden="true">
+  <div class="container modal"  id="AddFriendsModal" role = "dialog"  tabindex="-1" aria-labelledby="AddFriendsModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header" style="background-color: rgb(233, 201, 61);">
@@ -31,7 +34,7 @@
           
           </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-outline-warning" data-bs-dismiss="AddFriendsmodal">Close</button>
+          <button type="button" class="btn btn-outline-warning" data-bs-dismiss="modal">Close</button>
           <button type="button"  [disabled] = "!addfriendsForm.valid" class="btn btn-warning">Save changes</button>
         </div>
       </div>
