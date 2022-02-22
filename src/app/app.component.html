@@ -9,7 +9,7 @@
     <nav>
       <mat-list>
         <span>
-          <a mat-list-item routerLink="/addfriends" routerLinkActive="active" (click)="sidenav.close()">
+          <!-- <a mat-list-item routerLink="/addfriends" routerLinkActive="active" (click)="sidenav.close()">
             <span translate>Add Friends</span>
           </a>
           <mat-divider></mat-divider>
@@ -23,9 +23,53 @@
           <mat-divider></mat-divider>
           <a mat-list-item routerLink="/visitor" routerLinkActive="active" (click)="sidenav.close()">
             <span translate>SettleUp</span>
-          </a>
+          </a> -->
+          <mat-accordion>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title> My Groups </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div>
+                <a
+                  mat-list-item
+                  routerLink="/groupdetails/group1"
+                  routerLinkActive="active"
+                  (click)="sidenav.close()"
+                >
+                  <span translate>Group 1</span>
+                </a>
+                <mat-divider></mat-divider>
+                <a
+                  mat-list-item
+                  routerLink="/groupdetails/group2"
+                  routerLinkActive="active"
+                  (click)="sidenav.close()"
+                >
+                  <span translate>Group 2</span>
+                </a>
+                <mat-divider></mat-divider>
+                <a
+                  mat-list-item
+                  routerLink="/groupdetails/group3"
+                  routerLinkActive="active"
+                  (click)="sidenav.close()"
+                >
+                  <span translate>Group 3</span>
+                </a>
+                <mat-divider></mat-divider>
+                <a
+                  mat-list-item
+                  routerLink="/groupdetails/group4"
+                  routerLinkActive="active"
+                  (click)="sidenav.close()"
+                >
+                  <span translate>Group 4</span>
+                </a>
+              </div>
+            </mat-expansion-panel>
+          </mat-accordion>
           <mat-divider></mat-divider>
-          <a mat-list-item routerLink="/about" routerLinkActive="active" (click)="sidenav.close()">
+          <a mat-list-item routerLink="/about" style="padding-left: 8px;" routerLinkActive="active" (click)="sidenav.close()">
             <span translate>Statistics</span>
           </a>
         </span>

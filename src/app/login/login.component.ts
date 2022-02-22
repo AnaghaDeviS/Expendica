@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
  login() {
-   this.router.navigate( ["/homepage"]) 
+   this.router.navigate( ["/groupdetails", "group1"]);
 
  }
 }

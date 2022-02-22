@@ -5,16 +5,22 @@ mat-sidenav-container {
 mat-sidenav {
   min-width: 270px;
   max-width: 100%;
-  background-color: #673ab7;
-  color: #FFFFFF;
 }
 mat-sidenav-content mat-toolbar {
   justify-content: space-between;
 }
 mat-toolbar.sidenav-toolbar {
+  justify-content: space-between;
+}
+.mat-expansion-panel, mat-sidenav, mat-toolbar.sidenav-toolbar, .mat-expansion-panel-header-title {
   background-color: #673ab7;
   color: #FFFFFF;
-  justify-content: space-between;
+}
+.mat-expansion-panel {
+  box-shadow: none;
+}
+::ng-deep .mat-expansion-indicator::after {
+  color: #FFFFFF !important;
 }
 .menu {
   display: flex;

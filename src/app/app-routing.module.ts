@@ -8,11 +8,13 @@ import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddexpenseComponent } from './addexpense/addexpense.component';
+import { GroupdetailsComponent } from './groupdetails/groupdetails.component';
 
 const routes: Routes = [
   {path: '', redirectTo : 'login', pathMatch : 'full'},
   {path : 'homepage', component : HomepageComponent},
   {path : 'dashboard', component : DashboardComponent},
+  {path : 'groupdetails/:id', component : GroupdetailsComponent},
   {path : 'login', component : LoginComponent},
   {path : 'signup', component : SignupComponent},
   {path : 'addfriends', component : AddfriendsComponent},

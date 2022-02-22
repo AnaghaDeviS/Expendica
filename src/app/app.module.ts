@@ -15,6 +15,7 @@ import { StatisticsComponent } from './statistics/statistics.component';
 import { NgChartsModule } from 'ng2-charts';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
+import { GroupdetailsComponent } from './groupdetails/groupdetails.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { MaterialModule } from './material/material.module';
     DashboardComponent,
     AddexpenseComponent,
     FairnesscalculatorComponent,
-    StatisticsComponent
+    StatisticsComponent,
+    GroupdetailsComponent
   ],
   imports: [
     BrowserModule,
