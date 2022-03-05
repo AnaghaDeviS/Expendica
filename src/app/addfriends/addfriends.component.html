@@ -1,44 +1,26 @@
 
 
-<!-- Trigger -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#AddFriendsModal">
-  Add Friends
-</button>
-  <!-- Modal -->
-  <div class="container modal"  id="AddFriendsModal" role = "dialog"  tabindex="-1" aria-labelledby="AddFriendsModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header" style="background-color: rgb(233, 201, 61);">
-          <h5 class="modal-title" id="AddFriendsModalLabel" style="color: white;">Add Friends</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <form [formGroup] = "addfriendsForm" (ngSubmit) = "onSubmit()">
-                <div class="row">
-                    <div class="col">
-                        <label for="InputFirstName">First Name</label>
-                        <input type="text" class="form-control" formControlName = "firstname" placeholder="First name">
-                    </div>
-                    <div class="col">
-                        <label for="InputLastName">Last Name</label>
-                        <input type="text" class="form-control" formControlName = "lastname" placeholder="Last name">
-                    </div>
-                    <div class="row">
-                      <div class="col">
-                        <label for="InputEmailId">Email address</label>
-                        <input type="emailid" class="form-control" formControlName = "emailaddress" id="InputEmailId" aria-describedby="emailid" placeholder = "Enter your email address" >
-                      </div>
-                    </div>
-                </div>
-            </form>
-          
-          </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-outline-warning" data-bs-dismiss="modal">Close</button>
-          <button type="button"  [disabled] = "!addfriendsForm.valid" class="btn btn-warning">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
+<form class="add-friends-form" [formGroup] = "addfriendsForm">
+  <table class="full-width" cellspacing="0"><tr>
+    <td>
+      <mat-form-field class="full-width" appearance="fill">
+      <mat-label>First name</mat-label>
+      <input matInput formControlName = "firstname">
+    </mat-form-field></td>
+    <td><mat-form-field class="full-width" appearance="fill">
+      <mat-label>Last Name</mat-label>
+      <input matInput formControlName = "lastname">
+    </mat-form-field></td>
+  </tr>
+  <tr>
+    <td><mat-form-field class="full-width" appearance="fill">
+      <mat-label>Email Address</mat-label>
+      <input matInput formControlName = "emailaddress">
+    </mat-form-field></td>
+  </tr></table>
+</form>
+<div class="buttons">
+  <button mat-raised-button color="primary" [disabled]="!addfriendsForm.valid" (click)="onSubmit();">Save changes</button>
+</div>
     
       

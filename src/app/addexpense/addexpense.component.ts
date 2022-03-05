@@ -8,25 +8,39 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class AddexpenseComponent implements OnInit {
 
-  // addexpensesForm = new FormGroup({
-  //   expense_made_by : new FormControl(''),
-  //   spent_on : new FormControl(''),
-  //   expense_shared_with : new FormControl(''),
-  //   expense_to_be_split : new FormControl('')
-  // })
+  addexpensesForm = new FormGroup({
+    expenseMadeBy : new FormControl(''),
+    spentOn : new FormControl(''),
+    amount: new FormControl(''),
+    expenseSharedWith : new FormControl(''),
+    expenseToBeSplit : new FormControl('')
+  })
+
+  spentCategories: any[] = [
+    {value: '1', viewValue: 'Groceries'},
+    {value: '2', viewValue: 'Meals'},
+    {value: '3', viewValue: 'Travel'},
+    {value: '4', viewValue: 'Shopping'},
+    {value: '5', viewValue: 'Monthly Bills'},
+    {value: '6', viewValue: 'Others'}
+  ];
+
+  splitCategories: any[] = [
+    {value: '1', viewValue: 'Equally'},
+    {value: '2', viewValue: 'Percentage'},
+  ];
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
   
-  // onSubmit() {
-  //   if(this.addexpensesForm.valid){
-  //    console.log (this.addexpensesForm.getRawValue());
-  //   } else {
-  //     console.log ("There is an error in the form");
-  //   }
-  // }
+  onSubmit() {
+    if(this.addexpensesForm.valid){
+     console.log (this.addexpensesForm.getRawValue());
+    } else {
+      console.log ("There is an error in the form");
+    }
+  }
 
 }

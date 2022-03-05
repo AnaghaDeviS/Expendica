@@ -1,17 +1,4 @@
-.table {
-    border: 2px solid black;
-    border-radius: 5px;
-    padding: 5px;
-    width: 500px;
-    padding: 40px;
-    position: absolute;
-    top: 30%;
-    left: 20%;
-    transform: translate(-50%, -50%);
-    background-color:black;
-    color: rgb(224, 183, 45);
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
+table {
+  width: 40%;
+  margin-top: 20px;
 }

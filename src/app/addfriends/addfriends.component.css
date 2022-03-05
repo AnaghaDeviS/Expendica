@@ -1,12 +1,13 @@
-
-.container {
-    padding: 5px;
-    width: 500px;
-    padding: 40px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: rgb(224, 183, 45);
+.add-friends-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  margin-top: 20px;
 }
+
+.full-width {
+  width: 100%;
+}
+
+
   

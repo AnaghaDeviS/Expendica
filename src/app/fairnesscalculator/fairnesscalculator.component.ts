@@ -7,18 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FairnesscalculatorComponent implements OnInit {
   
-  data : Array<any>;
+  data : any[] = [];
+  displayedColumns: string[] = ['name', 'totalExpenditure', 'debts', 'payTo'];
+  dataSource: any[] = [];
 
   constructor() { 
-    this.data = [
-      {name : "Anagha", total_expenditure : "500", debts : "150", pay_to : "Kruthika"},
-      {name : "Anagha", total_expenditure : "500", debts : "150", pay_to : "Kruthika"},
-      {name : "Anagha", total_expenditure : "500", debts : "150", pay_to : "Kruthika"},
-      {name : "Anagha", total_expenditure : "500", debts : "150", pay_to : "Kruthika"}
-    ]
   }
 
   ngOnInit(): void {
+    this.data = [
+      {name : "Anagha", totalExpenditure : "500", debts : "150", payTo : "Kruthika"},
+      {name : "Anagha", totalExpenditure : "500", debts : "150", payTo : "Kruthika"},
+      {name : "Anagha", totalExpenditure : "500", debts : "150", payTo : "Kruthika"},
+      {name : "Anagha", totalExpenditure : "500", debts : "150", payTo : "Kruthika"}
+    ]
+    this.dataSource = this.data;
   }
 
 }

@@ -1,68 +1,55 @@
 
   
-  <!-- Modal -->
-  <div class="container" id="AddExpenseModal" tabindex="-1" aria-labelledby="AddExpenseModalLabel" aria-hidden="true">  
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header" style="background-color: rgb(233, 201, 61);">
-          <h5 class="modal-title" id="AddExpenseModalLabel" style="color: white;"> Add an Expense </h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        
-        <div class="modal-body">
-            <div class="container">
-                <div class="col">
-                    <div class="input-group mb-3">
-                        <label class = "input-group-text bg-warning bg-opacity-50 text-dark" for = "ExpenseMadeBy"> Expense made by :</label>
-                        <input type="text" class="form-control" placeholder="Enter name or emailaddress" aria-label="Username" aria-describedby="basic-addon1">
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="input-group mb-3">
-                        <label class="input-group-text bg-warning bg-opacity-50 text-dark" for="inputGroupSelect01"> Spent On : </label>
-                        <select class="form-select" id="inputGroupSelect01">
-                          <option selected>  </option>
-                          <option value="1"> Groceries </option>
-                          <option value="2"> Meals </option>
-                          <option value="3"> Travel </option>
-                          <option value="4"> Shopping </option>
-                          <option value="5"> Monthly Bills </option>
-                          <option value="6"> Others </option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="input-group mb-3">
-                        <span class="input-group-text bg-warning bg-opacity-50 text-dark"> ₹ </span>
-                        <input type="text" class="form-control" aria-label="Amount (to the nearest rupee)">
-                        <span class="input-group-text bg-warning bg-opacity-50 text-dark">.00</span>
-                      </div>
-                </div>
-                <div class="col">
-                    <div class="input-group mb-3">
-                        <label class="input-group-text bg-warning bg-opacity-50 text-dark" for = "Expenseshared"> Expense shared with : </label>
-                        <input type="text" class="form-control" aria-label="Username" placeholder = "Enter name or emailaddress">
-                      </div>
-                </div>
-                <div class="col">
-                    <div class="input-group mb-3">
-                        <label class="input-group-text bg-warning bg-opacity-50 text-dark" for="inputGroupSelect02"> Expense to be split : </label>
-                        <select class="form-select" id="inputGroupSelect02">
-                          <option selected>  </option>
-                          <option value="1"> Equally </option>
-                          <option value="2"> Percentage </option>
-                        </select>
-                    </div>
-                </div>
-                
-              </div>
-          
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-outline-warning" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-warning">Save changes</button>
-        </div>
-      </div>
-    </div>
+
+  <form class="add-expenses-form" [formGroup] = "addexpensesForm">
+    <table class="full-width" cellspacing="0"><tr>
+      <td>
+        <h4>Expense made by :</h4>
+        <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Enter name or emailaddress</mat-label>
+        <input matInput formControlName = "expenseMadeBy">
+      </mat-form-field></td>
+      <td>
+        <h4>Spent On :</h4>
+        <mat-form-field appearance="fill">
+          <mat-label>Spent On</mat-label>
+          <mat-select formControlName = "spentOn">
+            <mat-option *ngFor="let category of spentCategories" [value]="category.value">
+              {{category.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+    </td>
+    </tr>
+    <tr>
+      <td>
+        <h4>Enter amount to the nearest rupee :</h4>
+        <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Enter amount</mat-label>
+        <input matInput formControlName = "amount">
+      </mat-form-field></td>
+    </tr>
+    <tr>
+      <td>
+        <h4>Expense shared with :</h4>
+        <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Enter name or emailaddress</mat-label>
+        <input matInput formControlName = "expenseSharedWith">
+      </mat-form-field></td>
+      <td>
+      <h4>Spent On :</h4>
+        <mat-form-field appearance="fill">
+          <mat-label>Expense to be split :</mat-label>
+          <mat-select formControlName = "expenseToBeSplit">
+            <mat-option *ngFor="let category of splitCategories" [value]="category.value">
+              {{category.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+    </td>
+    </tr></table>
+  </form>
+  <div class="buttons">
+    <button mat-raised-button color="primary" [disabled]="!addexpensesForm.valid" (click)="onSubmit();">Save changes</button>
   </div>
   
